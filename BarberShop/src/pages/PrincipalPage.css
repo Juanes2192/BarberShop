@@ -197,7 +197,11 @@ button:hover {
   z-index: 1; /* Asegura que el degradado esté sobre la imagen */
 }
 
-/* Estilos del texto en la sección de servicios */
+.consejos-servicios{
+  background-color: antiquewhite;
+  height: 700px;
+}
+
 /* Estilos del texto en la sección de servicios */
 .servicios-texto {
   position: absolute;
@@ -252,4 +256,9 @@ button:hover {
 .servicios-texto button:hover {
   background-color: rgba(255, 255, 255, 0.2); /* Color de fondo más claro al pasar el mouse */
   color: var(--color-boton-texto); /* Mantiene el color del texto */
+}
+
+.consejos-productos{
+  background-color: antiquewhite;
+  height: 700px;
 }

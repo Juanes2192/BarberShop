@@ -1,12 +1,4 @@
-.Header {
-    background-color: var(--color-fondo-header);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-  }
-
-  .Footer{
+.Footer{
     display: flex;
     justify-content: center;
     color: whitesmoke;
