@@ -32,9 +32,8 @@ body {
 }
 
 .secciones {
-  margin: 0;
-  margin-bottom: 20px;
-  padding: 20px;
+  margin: 0; /* Sin margen */
+  padding: 0; /* Sin padding */
   background-color: var(--color-fondo-secciones);
   border-radius: 5px;
   position: relative;
@@ -108,3 +107,149 @@ button:hover {
   z-index: 10;
 }
 
+/* Estilos específicos para el componente Reviews */
+.custom-carousel {
+  width: 100%; /* Ancho completo del contenedor */
+  margin: auto;
+  position: relative;
+  overflow: hidden; /* Evita el scroll lateral */
+}
+
+.custom-carousel .carousel-item {
+  transition: transform 0.6s ease-in-out;
+}
+
+.custom-card {
+  background-color: #000; /* Fondo negro */
+  color: #fff; /* Letras blancas */
+  border: none; /* Sin borde */
+  border-radius: 0; /* Sin radio en las esquinas */
+  padding: 20px;
+  box-shadow: none; /* Sin sombra */
+  width: 100%; /* Ancho completo */
+  box-sizing: border-box; /* Incluye el padding en el ancho */
+  margin: 0; /* Sin margen */
+}
+
+.custom-card .card-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.custom-card .card-text {
+  font-size: 1.2rem;
+}
+
+.custom-card .rating {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.star {
+  font-size: 1.5rem;
+  color: #fff; /* Color blanco para las estrellas vacías */
+}
+
+.star.filled {
+  color: #fff; /* Color blanco para las estrellas llenas */
+}
+
+.custom-card .card-footer {
+  background-color: transparent;
+  border-top: none;
+  font-size: 0.9rem;
+  color: #6c757d;
+  text-align: right;
+}
+
+/* Sección de servicios con CSS Grid */
+.servicios-imagenes {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Cuatro columnas de igual tamaño */
+  width: 100%; /* Ocupa el 100% del ancho del contenedor */
+  margin: 0; /* Sin margen */
+  padding: 0; /* Sin padding */
+  position: relative;
+}
+
+.imagen-contenedor {
+  position: relative;
+  width: 100%;
+  height: 450px; /* Altura fija para las imágenes */
+}
+
+.imagen-contenedor img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Mantiene la proporción de la imagen y recorta si es necesario */
+  display: block; /* Elimina el espacio extra debajo de las imágenes */
+}
+
+.imagen-degradado {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)); /* Controla la opacidad */
+  pointer-events: none; /* Permite que los eventos de puntero pasen a través del pseudo-elemento */
+  z-index: 1; /* Asegura que el degradado esté sobre la imagen */
+}
+
+/* Estilos del texto en la sección de servicios */
+/* Estilos del texto en la sección de servicios */
+.servicios-texto {
+  position: absolute;
+  top: 50%; /* Centra verticalmente */
+  left: 50%; /* Centra horizontalmente */
+  transform: translate(-50%, -50%); /* Ajusta la posición para el centrado exacto */
+  color: white; /* Color blanco */
+  text-align: center;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  z-index: 2; /* Asegura que el texto esté sobre las imágenes y el degradado */
+}
+
+.servicios-texto h2 {
+  margin: 0 0 15px; /* Margen inferior para separación entre el título y el párrafo */
+  font-size: 2.5rem; /* Tamaño de fuente más grande */
+  position: relative;
+  display: inline-block; /* Asegura que el pseudo-elemento se centre correctamente */
+  margin-bottom: 65px;
+}
+
+.servicios-texto h2::after {
+  content: '';
+  display: block;
+  width: 75%; /* Ancho de la línea */
+  height: 4px; /* Altura de la línea */
+  background-color: white; /* Color de la línea */
+  margin: 10px auto 0; /* Centra la línea horizontalmente y agrega margen superior */
+}
+
+.servicios-texto p {
+  margin: 0 0 20px; /* Margen inferior para separación entre el párrafo y el botón */
+  line-height: 1.5; /* Mejora la legibilidad del párrafo */
+}
+
+.servicios-texto button {
+  border: 2px solid var(--color-boton-borde);
+  color: var(--color-boton-texto); /* Color del texto del botón */
+  background-color: var(--color-boton-fondo);
+  padding: 15px 20px; /* Igual que en la sección de presentación */
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 3px; /* Sin borde redondeado */
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: inline-block;
+  margin-top: 20px; /* Espacio superior para separación */
+}
+
+.servicios-texto button:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Color de fondo más claro al pasar el mouse */
+  color: var(--color-boton-texto); /* Mantiene el color del texto */
+}

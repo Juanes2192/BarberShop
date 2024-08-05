@@ -1,0 +1,128 @@
+.custom-carousel {
+  width: 100%; /* Ancho completo del contenedor */
+  /* margin: auto; */
+  position: relative;
+  overflow: hidden; /* Evita el scroll lateral */
+}
+
+.custom-carousel .carousel-item {
+  transition: transform 0.6s ease-in-out;
+}
+
+.custom-card {
+  background-color: #000; /* Fondo negro */
+  color: #fff; /* Letras blancas */
+  border: none; /* Sin borde */
+  border-radius: 0; /* Sin radio en las esquinas */
+  padding: 20px 40px; /* Padding ajustado para reducir el ancho del texto */
+  box-shadow: none; /* Sin sombra */
+  width: 100%; /* Ancho completo */
+  box-sizing: border-box; /* Incluye el padding en el ancho */
+  margin: 0; /* Sin margen */
+  text-align: center; /* Centra el texto */
+}
+
+.custom-card .card-title {
+  font-size: 1.8rem; /* Tamaño de fuente más grande */
+  font-weight: bold; /* Texto en negrita */
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.custom-card .card-title::after {
+  content: "";
+  display: block;
+  width: 50%;
+  height: 2px;
+  background-color: #fff; /* Línea blanca */
+  margin: 10px auto; /* Centra la línea */
+}
+
+.custom-card .rating {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.star {
+  margin-top: 15px;
+  font-size: 1.5rem;
+  color: #fff; /* Color blanco para las estrellas vacías */
+}
+
+.star.filled {
+  color: #fff; /* Color blanco para las estrellas llenas */
+}
+
+.custom-card .card-text {
+  font-size: 1.2rem;
+  margin-bottom: 15px; /* Espacio debajo del texto */
+  text-align: center; /* Centra el texto */
+}
+
+.custom-card .card-footer {
+  background-color: transparent;
+  border-top: none;
+  font-size: 0.9rem;
+  color: #6c757d;
+  text-align: right;
+}
+
+.reviews-form-container {
+  padding: 20px; 
+  background-color: #000; /* Fondo negro para el formulario */
+  color: #fff; /* Texto blanco */
+  border-radius: 0px; /* Bordes redondeados */
+  margin-top: 10px; 
+  text-align: center; /* Centra el texto */
+}
+
+.form-title {
+  font-size: 1.8rem; /* Tamaño de fuente grande para el título */
+  font-weight: bold; /* Texto en negrita */
+  margin-bottom: 10px; /* Espacio debajo del título */
+}
+
+.custom-form .form-label {
+  color: #fff; /* Color blanco para las etiquetas del formulario */
+}
+
+.custom-form .form-control {
+  background-color: #333; /* Fondo gris oscuro */
+  color: #fff; /* Texto blanco */
+  border: 1px solid #fff; /* Borde blanco */
+}
+
+.custom-form .form-control,
+.custom-form .btn {
+  max-width: 500px; /* Ancho máximo para inputs y botón */
+  margin: 0 auto; /* Centrar en el eje principal */
+  display: block; /* Asegura que se comporten como bloques para centrado */
+}
+
+.custom-form .btn {
+  background-color: #fff; /* Fondo blanco */
+  color: #000; /* Texto negro */
+  border: none; /* Sin borde */
+}
+
+.rating-input {
+  display: flex;
+  justify-content: center;
+  gap: 5px; /* Espacio entre las estrellas */
+}
+
+.rating-input .star-input {
+  cursor: pointer;
+  font-size: 1.5rem; /* Tamaño de las estrellas */
+  color: #ccc; /* Color gris claro por defecto */
+}
+
+.rating-input .star-input.checked {
+  color: #fff; /* Color blanco para las estrellas seleccionadas */
+}
+
+.button-send-form{
+  width: 150px;
+}
