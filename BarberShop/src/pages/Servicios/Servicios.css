@@ -1,0 +1,75 @@
+/* .servicios {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .servicios div {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .servicios img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .servicios div::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); 
+    z-index: 1; 
+  }
+  
+  .titulo-servicio, .resumen-servicio, .boton-servicio {
+    position: absolute;
+    z-index: 2; 
+    color: white; 
+  }
+  
+  .titulo-servicio {
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2em;
+    font-weight: bold;
+  }
+  
+  .resumen-servicio {
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.2em;
+  }
+  
+  .boton-servicio {
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333; 
+    color: white; 
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .boton-servicio:hover {
+    background-color: #555; 
+  }
+   */

@@ -1,18 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import './PrincipalPage.css';
 import { Reviews } from '../components/Reviews/Reviews';
-import serviciogrid1 from '../img/Servicios/serviciosgrid1.jpg';
-import serviciogrid2 from '../img/Servicios/serviciosgrid2.jpg';
-import serviciogrid3 from '../img/Servicios/serviciosgrid3.jpg';
-import serviciogrid4 from '../img/Servicios/serviciosgrid4.jpg';
+import serviciogrid1 from '../img/Servicios/serviciosgrid1.png';
+import serviciogrid2 from '../img/Servicios/serviciosgrid2.png';
+import serviciogrid3 from '../img/Servicios/serviciosgrid3.png';
+import serviciogrid4 from '../img/Servicios/serviciosgrid4.png';
 import productosgrid1 from '../img/Productos/productosgrid1.png';
 import productosgrid2 from '../img/Productos/productosgrid2.png';
 import productosgrid3 from '../img/Productos/productosgrid3.png';
 import productosgrid4 from '../img/Productos/productosgrid4.png';
-
+import { useNavigate } from 'react-router-dom';
 
 
 export default function PrincipalPage() {
+  const [selectedOption, setSelectedOption] = useState('home');
+  const navigate = useNavigate();
+
+  const handleNavLinkClick = (event, targetId) => {
+    event.preventDefault();
+    if (targetId === 'servicios') {
+      navigate('/servicios'); // Redirige a la ruta /
+    } else if (targetId === 'productos') {
+      navigate('/Productos'); // Redirige a la ruta /Servicios
+    }
+  }
+
   useEffect(() => {
     // Función para desplazarse a la sección de servicios
     const scrollToServices = () => {
@@ -52,7 +64,7 @@ export default function PrincipalPage() {
       }
     };
   }, []);
-  
+
   return (
     <React.Fragment>
       <div className='contenedor-principal'>
@@ -60,7 +72,7 @@ export default function PrincipalPage() {
           <div className="presentacion">
             <h1>¡MÁS QUE UN CORTE, UNA EXPERIENCIA!</h1>
             <button id="boton-agenda">AGENDA TU CITA</button>
-            <button>NUESTROS PRODUCTOS</button>
+            <button id="boton-productos">NUESTROS PRODUCTOS</button>
           </div>
         </section>
         <section id="reseñas" className='secciones'>
@@ -98,7 +110,9 @@ export default function PrincipalPage() {
                   Desde cortes clásicos y afeitados tradicionales hasta tratamientos modernos y
                   personalizados, cada servicio está diseñado para satisfacer tus necesidades.
                   Haz clic para explorar nuestras opciones y encuentra el estilo que mejor se adapte a ti.</p>
-                <button>CONOCELOS AQUÍ</button>
+                <button onClick={(e) => handleNavLinkClick(e, 'servicios')}
+                  href="#servicios"
+                  className={selectedOption === 'servicios' ? 'selected' : ''}>CONOCELOS AQUÍ</button>
               </div>
             </div>
           </div>
@@ -128,12 +142,11 @@ export default function PrincipalPage() {
                 <div className='imagen-degradado'></div>
               </div>
               <div className='servicios-texto'>
-                <h2><strong>CONOCE NUESTROS SERVICIOS</strong></h2>
-                <p>Descubre la variedad de servicios que ofrecemos en nuestra barbería.
-                  Desde cortes clásicos y afeitados tradicionales hasta tratamientos modernos y
-                  personalizados, cada servicio está diseñado para satisfacer tus necesidades.
-                  Haz clic para explorar nuestras opciones y encuentra el estilo que mejor se adapte a ti.</p>
-                <button>CONOCELOS AQUÍ</button>
+                <h2><strong>CONOCE NUESTROS PRODUCTOS</strong></h2>
+                <p>Descubre la variedad de productos que ofrecemos en nuestra barbería.</p>
+                <button onClick={(e) => handleNavLinkClick(e, 'productos')}
+                  href="#productos"
+                  className={selectedOption === 'productos' ? 'selected' : ''}>CONOCELOS AQUÍ</button>
               </div>
             </div>
 
