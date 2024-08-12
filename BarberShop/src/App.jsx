@@ -7,8 +7,6 @@ import './App.css'
 import Productos from './pages/Productos/Productos';
 import {Footer} from './components/Footer/Footer';
 
-const currentYear = new Date().getFullYear();
-
 export function App() {
   return (
     <BrowserRouter>
