@@ -9,8 +9,6 @@ import productosgrid1 from '../img/Productos/productosgrid1.png';
 import productosgrid2 from '../img/Productos/productosgrid2.png';
 import productosgrid3 from '../img/Productos/productosgrid3.png';
 import productosgrid4 from '../img/Productos/productosgrid4.png';
-import { useNavigate } from 'react-router-dom';
-
 
 export default function PrincipalPage() {
   const [selectedOption, setSelectedOption] = useState('home');
@@ -80,11 +78,6 @@ export default function PrincipalPage() {
             <Reviews />
           </div>
         </section>
-        <section id='consejos-servicios' className='secciones'>
-          <div className='consejos-servicios'>
-            hola
-          </div>
-        </section>
         <section id="servicios" className='secciones'>
           <div className='servicios'>
             <div className='servicios-imagenes'>
@@ -118,9 +111,7 @@ export default function PrincipalPage() {
           </div>
         </section>
         <section id='consejos-productos' className='secciones'>
-          <div className='consejos-productos'>
-            hola
-          </div>
+          <div className='consejos-productos'></div>
         </section>
         <section id="productos" className='secciones'>
           <div className='servicios'>

@@ -19,7 +19,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease; /* Transición suave para el zoom */
+  transition: transform 0.5s ease, filter 0.5s ease; /* Transición suave para el zoom y filtro */
 }
 
 /* Degradado oscuro sobre la imagen */
@@ -30,13 +30,18 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6));
   z-index: 1;
+  transition: opacity 0.5s ease; /* Transición suave para reducir el degradado */
 }
 
-/* Zoom en la imagen al hacer hover */
+/* Zoom en la imagen y reducir degradado al hacer hover */
 .op-servicios > div:hover img {
   transform: scale(1.1); /* Zoom leve en la imagen */
+}
+
+.op-servicios > div:hover::after {
+  opacity: 0.3; /* Reduce la opacidad del degradado al hacer hover */
 }
 
 /* Posicionamiento y estilo del contenido sobre la imagen */
@@ -50,21 +55,21 @@
 }
 
 .titulo-servicio {
-  top: 20%;
+  top: 25%; /* Ajustado para reducir el margen entre elementos */
   left: 50%;
   transform: translateX(-50%);
   font-size: 2em;
 }
 
 .resumen-servicio {
-  top: 50%;
+  top: 45%; /* Ajustado para reducir el margen entre elementos */
   left: 50%;
   transform: translateX(-50%);
   font-size: 1.2em;
 }
 
 .boton-servicio {
-  top: 70%;
+  top: 60%; /* Ajustado para reducir el margen entre elementos */
   left: 50%;
   transform: translateX(-50%);
   padding: 10px 20px;

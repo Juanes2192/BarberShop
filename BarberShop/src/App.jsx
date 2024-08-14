@@ -6,6 +6,8 @@ import NavBar from './components/NavBar/NavBar';
 import './App.css'
 import Productos from './pages/Productos/Productos';
 import {Footer} from './components/Footer/Footer';
+import { AsesoriaImagen, Barberia, Dermatologia } from './pages/Servicios';
+
 
 export function App() {
   return (
@@ -15,6 +17,9 @@ export function App() {
         <Routes>
           <Route path='/' element={<PrincipalPage />} />
           <Route path='/Servicios' element={<Servicios />} />
+          <Route path='/Servicios/Asesoria-de-imagen' element={<AsesoriaImagen/>} />
+          <Route path='/Servicios/Barberia' element={<Barberia/>} />
+          <Route path='/Servicios/Dermatologia' element={<Dermatologia/>} />
           <Route path='/Productos' element={<Productos />} />
         </Routes>
       </div>
