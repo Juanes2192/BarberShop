@@ -9,6 +9,7 @@ import productosgrid1 from '../img/Productos/productosgrid1.png';
 import productosgrid2 from '../img/Productos/productosgrid2.png';
 import productosgrid3 from '../img/Productos/productosgrid3.png';
 import productosgrid4 from '../img/Productos/productosgrid4.png';
+import { useNavigate } from 'react-router-dom';
 
 export default function PrincipalPage() {
   const [selectedOption, setSelectedOption] = useState('home');

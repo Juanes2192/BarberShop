@@ -1,0 +1,163 @@
+.barberia-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  color: #ffffff;
+  min-height: 100vh;
+  margin-top: 50px;
+  background-color: #777;
+}
+
+.header-barberia {
+  width: 100%; /* Ancho completo del formulario */
+  background-color: #ffffff; /* Fondo del header */
+  color: #000000; /* Color del texto */
+  padding: 10px 20px;
+  margin-top: 25px;
+  border-radius: 8px 8px 0 0; /* Bordes redondeados en la parte superior */
+  text-align: center; /* Centra el texto dentro del header */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Sombra para efecto elevado */
+  max-width: 1000px; /* Máximo ancho para que coincida con el formulario */
+}
+  
+  
+.barberia-form {
+  background-color: #000;
+  padding: 20px;
+  border-radius: 0 0 8px 8px; /* Bordes redondeados en la parte inferior */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  color: #fff;
+  width: 100%;
+  max-width: 1000px; /* Asegura que el ancho máximo coincida con el header */
+}
+  
+  .barberia-label, 
+  .barberia-select, 
+  .barberia-input, 
+  .barberia-checkbox, 
+  .barberia-submit-button, 
+  .barberia-feedback {
+    color: #fff;
+  }
+  
+  .barberia-input, 
+  .barberia-select {
+    background-color: #333;
+    border-color: #555;
+    color: #fff;
+  }
+  
+  .barberia-input::placeholder {
+    color: #bbb;
+  }
+  
+  .barberia-input:focus, 
+  .barberia-select:focus {
+    background-color: #444;
+    border-color: #777;
+    color: #fff;
+  }
+  
+  .barberia-row {
+    margin-bottom: 15px;
+  }
+  
+  .barberia-card-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Permite que las tarjetas se ajusten en la misma fila */
+  }
+  
+  .barberia-card {
+    background-color: #222;
+    color: #fff;
+    border: none;
+    margin-top: 20px;
+    margin-left: 12px;
+    margin-right: 12px;
+    margin-bottom: 20px;
+    height: 350px; /* Controla el alto de la tarjeta */
+    width: 15rem; /* Controla el ancho de la tarjeta */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .barberia-card-title, 
+  .barberia-card-text {
+    color: #fff;
+  }
+  
+  .barberia-card-button {
+    background-color: #444;
+    border-color: #555;
+    width: 150px;
+  }
+  
+  .barberia-card-button:hover {
+    background-color: #555;
+    border-color: #666;
+  }
+  
+  .barberia-input-group {
+    display: flex;
+    align-items: center;
+  }
+  
+  .barberia-input-text {
+    background-color: #333;
+    border-color: #555;
+    color: #fff;
+  }
+  
+  .barberia-submit-button {
+    background-color: #444;
+    border-color: #555;
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  .barberia-submit-button:hover {
+    background-color: #555;
+    border-color: #666;
+  }
+  
+  .barberia-card-img {
+    background-color: #ffffff;
+    width: 60%; /* Reduce el tamaño de la imagen */
+    height: auto; /* Mantiene la proporción de la imagen */
+    display: block; /* Asegura que la imagen sea tratada como un bloque */
+    margin: 0 auto; /* Centra la imagen en el eje principal (horizontal) */
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+  }
+
+  .barberia-card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center; /* Centra el contenido horizontalmente */
+  }
+
+  .barberia-card-button {
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .barberia-card-button.selected {
+    background-color: green;
+    color: white;
+  }
+  
+  .barberia-card-button:not(.selected) {
+    background-color: #686868; /* Color de botón no seleccionado */
+    color: white;
+  }
