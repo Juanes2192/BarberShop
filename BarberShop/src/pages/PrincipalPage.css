@@ -258,3 +258,53 @@ button:hover {
   height: 40px;
 }
 
+@media (max-width: 768px) {
+  .seccion-inicio {
+    height: 600px; /* Ajusta la altura para pantallas más pequeñas */
+    background-position: center center; /* Asegura que la imagen de fondo esté centrada */
+  }
+
+  .presentacion h1 {
+    font-size: 1.5rem; /* Reduce el tamaño del texto */
+    margin-bottom: 20px; /* Ajusta el margen inferior */
+  }
+
+  button {
+    width: 100%; /* Botones ocupan todo el ancho */
+    margin: 10px 0; /* Ajusta el margen entre botones */
+  }
+
+  .servicios-imagenes {
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas en lugar de cuatro */
+    height: auto; /* Ajusta la altura de las imágenes */
+  }
+
+  .imagen-contenedor {
+    height: 300px; /* Ajusta la altura de las imágenes */
+  }
+
+  .servicios-texto {
+    padding: 10px; /* Reduce el padding */
+    font-size: 0.9rem; /* Reduce el tamaño del texto */
+  }
+
+  .servicios-texto h2 {
+    font-size: 1.8rem; /* Reduce el tamaño del título */
+    margin-bottom: 20px; /* Ajusta el margen inferior */
+  }
+
+  .servicios-texto p {
+    font-size: 0.8rem; /* Reduce el tamaño del texto del párrafo */
+    margin-bottom: 15px; /* Ajusta el margen inferior */
+  }
+
+  .consejos-productos {
+    height: auto; /* Ajusta la altura para el contenedor de consejos-productos */
+    padding: 10px; /* Agrega padding para un mejor espaciado */
+  }
+
+  .Header {
+    position: relative; /* Ajusta la posición para pantallas más pequeñas */
+    width: 100%; /* Asegura que el header ocupe todo el ancho */
+  }
+}

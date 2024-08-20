@@ -5,20 +5,24 @@ import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Row from 'react-bootstrap/Row';
 import Card from 'react-bootstrap/Card';
+import { Alert } from 'react-bootstrap';
 import './Barberia.css';
-import opbarberia1 from '../../../../img/Servicios/opbarberia1.png'
-import opbarberia2 from '../../../../img/Servicios/opbarberia2.png'
-import opbarberia3 from '../../../../img/Servicios/opbarberia3.png'
+import opbarberia1 from '../../../../img/Servicios/opbarberia1.png';
+import opbarberia2 from '../../../../img/Servicios/opbarberia2.png';
+import opbarberia3 from '../../../../img/Servicios/opbarberia3.png';
 
 export function Barberia() {
   const [validated, setValidated] = useState(false);
   const [selectedService, setSelectedService] = useState(null);
   const [total, setTotal] = useState(0);
+  const [selectedBarber, setSelectedBarber] = useState('1');
+  const [selectedReminder, setSelectedReminder] = useState('1');
+  const [showError, setShowError] = useState(false);
 
   const services = [
-    { id: 1, name: 'Corte de cabello', price: 30, img: opbarberia1 },
-    { id: 2, name: 'Barba', price: 20, img: opbarberia2 },
-    { id: 3, name: 'Cabello + Barba', price: 45, img: opbarberia3 },
+    { id: 1, name: 'Estilo de barba', price: 7500, img: opbarberia1 },
+    { id: 2, name: 'Corte de cabello', price: 15000, img: opbarberia2 },
+    { id: 3, name: 'Cabello + Barba', price: 20000, img: opbarberia3 },
   ];
 
   const handleServiceSelect = (id, price) => {
@@ -26,19 +30,37 @@ export function Barberia() {
     setTotal(price);
   };
 
+  const handleBarberChange = (event) => {
+    setSelectedBarber(event.target.value);
+  };
+
+  const handleReminderChange = (event) => {
+    setSelectedReminder(event.target.value);
+  };
+
   const handleSubmit = (event) => {
     const form = event.currentTarget;
-    if (form.checkValidity() === false) {
+
+    if (
+      form.checkValidity() === false ||
+      total === 0 ||
+      selectedBarber === '1' ||
+      selectedReminder === '1'
+    ) {
       event.preventDefault();
       event.stopPropagation();
+      setShowError(true);
+    } else {
+      setShowError(false);
     }
+
     setValidated(true);
   };
 
   return (
     <div className="barberia-container">
       <header className="header-barberia">
-        <h1>Formulario Barberia</h1>
+        <h1>Formulario Barbería</h1>
       </header>
       <Form noValidate validated={validated} onSubmit={handleSubmit} className="barberia-form">
         <Row className="mb-3 barberia-row">
@@ -51,30 +73,35 @@ export function Barberia() {
               className="barberia-input"
             />
             <Form.Control.Feedback type="invalid" className="barberia-feedback">
-              Por favor digite el nombre de usuario.
+              Por favor digita tu nombre completo.
             </Form.Control.Feedback>
           </Form.Group>
 
           <Form.Group as={Col} md="4" controlId="validationCustomUsername" className="barberia-form-group">
-            <Form.Label className="barberia-label">Correo Electronico</Form.Label>
+            <Form.Label className="barberia-label">Correo Electrónico</Form.Label>
             <InputGroup hasValidation className="barberia-input-group">
               <InputGroup.Text id="inputGroupPrepend" className="barberia-input-text">@</InputGroup.Text>
               <Form.Control
-                type="text"
-                placeholder="Correo electronico"
+                type="email"
+                placeholder="Correo electrónico"
                 aria-describedby="inputGroupPrepend"
                 required
                 className="barberia-input"
               />
               <Form.Control.Feedback type="invalid" className="barberia-feedback">
-                Por favor digite un correo electronico.
+                Por favor, digita un correo electrónico válido.
               </Form.Control.Feedback>
             </InputGroup>
           </Form.Group>
 
           <Form.Group as={Col} md="4" controlId="validationCustom04" className="barberia-form-group">
-            <Form.Label className="barberia-label">Telefono</Form.Label>
-            <Form.Control type="text" placeholder="Digite su numero de telefono" required className="barberia-input" />
+            <Form.Label className="barberia-label">Teléfono</Form.Label>
+            <Form.Control
+              type="number"
+              placeholder="Número de teléfono"
+              required
+              className="barberia-input"
+            />
             <Form.Control.Feedback type="invalid" className="barberia-feedback">
               Proporciona un número de teléfono válido.
             </Form.Control.Feedback>
@@ -99,10 +126,12 @@ export function Barberia() {
           </Form.Group>
         </Row>
 
+        <div className="barberia-titulo-servicios"><h2>OPCIONES DE SERVICIO</h2></div>
+
         <Row className="mb-3 barberia-card-row">
           {services.map(service => (
-            <Card 
-              key={service.id} 
+            <Card
+              key={service.id}
               className={`barberia-card ${selectedService === service.id ? 'selected' : ''}`}
               onClick={() => handleServiceSelect(service.id, service.price)}
             >
@@ -112,8 +141,8 @@ export function Barberia() {
                 <Card.Text className="barberia-card-text">
                   ${service.price}
                 </Card.Text>
-                <Button 
-                  variant="primary" 
+                <Button
+                  variant="primary"
                   className={`barberia-card-button ${selectedService === service.id ? 'selected' : ''}`}
                 >
                   {selectedService === service.id ? 'Seleccionado' : 'Seleccionar'}
@@ -123,43 +152,53 @@ export function Barberia() {
           ))}
         </Row>
 
-        <Form.Group as={Row} controlId="formBarbero" className="barberia-form-group">
-          <Form.Label as={Col} sm="2" className="barberia-label">Selecciona un barbero</Form.Label>
-          <Col sm="10">
-            <Form.Select aria-label="Selecciona un barbero" className="barberia-select">
-              <option>Selecciona un barbero</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
-            </Form.Select>
-          </Col>
-        </Form.Group>
+        <div className="barberia-form-group">
+          <label className="barberia-label" htmlFor="barbero">Selecciona un barbero</label>
+          <select
+            id="barbero"
+            value={selectedBarber}
+            onChange={handleBarberChange}
+            className={`barberia-select ${selectedBarber === '1' ? 'is-invalid' : ''}`}
+            required
+          >
+            <option value="1">Selecciona un barbero</option>
+            <option value="2">Esteban Perdomo</option>
+            <option value="3">Felipe Rodriguez</option>
+            <option value="4">Carlos Perdomo</option>
+            <option value="5">Jean Riascos</option>
+            {/* ... otras opciones */}
+          </select>
+        </div>
 
-        <Form.Group as={Row} controlId="formMetodoRecordatorio" className="barberia-form-group">
-          <Form.Label as={Col} sm="2" className="barberia-label">Método de recordatorio</Form.Label>
-          <Col sm="10">
-            <Form.Select aria-label="Método de recordatorio" className="barberia-select">
-              <option>Método de recordatorio</option>
-              <option value="1">Email</option>
-              <option value="2">SMS</option>
-              <option value="3">Llamada</option>
-            </Form.Select>
-          </Col>
-        </Form.Group>
+        <div className="barberia-form-group">
+          <label className="barberia-label" htmlFor="recordatorio">Método de recordatorio</label>
+          <select
+            id="recordatorio"
+            value={selectedReminder}
+            onChange={handleReminderChange}
+            className={`barberia-select ${selectedReminder === '1' ? 'is-invalid' : ''}`}
+            required
+          >
+            <option value="1">Método de recordatorio</option>
+            <option value="2">Email</option>
+            <option value="3">Whatsapp</option>
+            <option value="4">SMS</option>
+          </select>
+        </div>
 
         <Form.Group controlId="formBasicCheckbox" className="barberia-form-group">
-          <Form.Check 
-            type="checkbox" 
-            label="Aceptar términos y condiciones" 
+          <Form.Check
+            type="checkbox"
+            label="Aceptar términos y condiciones"
             required
             className="barberia-checkbox"
           />
         </Form.Group>
 
         <Form.Group controlId="formReceivePromotions" className="barberia-form-group">
-          <Form.Check 
-            type="checkbox" 
-            label="¿Deseas recibir promociones y ofertas especiales?" 
+          <Form.Check
+            type="checkbox"
+            label="¿Deseas recibir promociones y ofertas especiales?"
             className="barberia-checkbox"
           />
         </Form.Group>
@@ -174,7 +213,19 @@ export function Barberia() {
           />
         </Form.Group>
 
-        <Button type="submit" className="barberia-submit-button">Enviar Formulario</Button>
+        {showError && (
+          <Alert variant="danger" className="alert-lg">
+            Debes seleccionar al menos un servicio y completar todos los campos obligatorios.
+          </Alert>
+        )}
+
+        <Button
+          type="submit"
+          className="barberia-submit-button"
+          disabled={total === 0 || selectedBarber === '1' || selectedReminder === '1'}
+        >
+          Solicitar cita
+        </Button>
       </Form>
     </div>
   );

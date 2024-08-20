@@ -1,9 +1,24 @@
-.Footer{
-    display: flex;
-    justify-content: center;
-    color: whitesmoke;
-    background-color: black;
-    width: 100%;
-    height: 75px;
-    padding-top: 24.5px;
+.Footer {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Centra el texto verticalmente */
+  color: whitesmoke;
+  background-color: black;
+  width: 100%;
+  height: 75px;
+  padding-top: 24.5px;
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+  .Footer {
+    padding-top: 0; /* Elimina el padding superior en móviles */
+    height: auto; /* Ajusta la altura automáticamente en móviles */
+    text-align: center; /* Centra el texto horizontalmente en móviles */
+    justify-content: center; /* Centra el contenido horizontalmente */
   }
+
+  .Footer p {
+    margin: 0; /* Elimina el margen del párrafo para que se centre completamente */
+  }
+}

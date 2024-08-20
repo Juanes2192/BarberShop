@@ -32,13 +32,32 @@
   max-width: 1000px; /* Asegura que el ancho máximo coincida con el header */
 }
   
-  .barberia-label, 
+  .barberia-label,
   .barberia-select, 
   .barberia-input, 
   .barberia-checkbox, 
   .barberia-submit-button, 
   .barberia-feedback {
     color: #fff;
+  }
+
+  .barberia-feedback{
+    margin-bottom: 0px;
+  }
+
+  .barberia-select {
+    width: 50%; /* Ajusta el ancho según sea necesario */
+    margin-bottom: 25px;
+    height: 37px;
+    border-radius: 6px;
+    background-color: #333;
+    border-color: #555;
+    color: #fff;
+    margin-left: 250px; /* Añade un margen derecho de 30px */
+  }
+  
+  .barberia-select:last-child {
+    margin-right: 0; /* Elimina el margen derecho en el último select */
   }
   
   .barberia-input, 
@@ -61,6 +80,12 @@
   
   .barberia-row {
     margin-bottom: 15px;
+  }
+
+  .barberia-titulo-servicios{
+    color: #fff;
+    text-align: center;
+    margin-top: 30px;
   }
   
   .barberia-card-row {
@@ -112,25 +137,35 @@
   }
   
   .barberia-submit-button {
-    background-color: #444;
-    border-color: #555;
     margin-top: 20px;
     width: 100%;
     padding: 10px;
     font-size: 16px;
-  }
+    background-color: rgb(0, 82, 0); 
+    border-color: green;
+}
+
+.barberia-submit-button:disabled {
+    background-color: #444;
+    border-color: #555;
+}
+
+.barberia-submit-button:focus {
+  outline: none;
+  box-shadow: none;
+}
   
-  .barberia-submit-button:hover {
+  /* .barberia-submit-button:hover {
     background-color: #555;
     border-color: #666;
-  }
+  } */
   
   .barberia-card-img {
     background-color: #ffffff;
-    width: 60%; /* Reduce el tamaño de la imagen */
-    height: auto; /* Mantiene la proporción de la imagen */
-    display: block; /* Asegura que la imagen sea tratada como un bloque */
-    margin: 0 auto; /* Centra la imagen en el eje principal (horizontal) */
+    width: 80%; 
+    height: auto; 
+    display: block; 
+    margin: 0 auto; 
     border-radius: 10px;
     margin-top: 10px;
     margin-bottom: 15px;
@@ -161,3 +196,71 @@
     background-color: #686868; /* Color de botón no seleccionado */
     color: white;
   }
+
+  .is-invalid {
+    border-color: red !important;
+  }
+
+
+  .alert-lg {
+    color: #ffffff;
+    background-color: #381313;
+    border-color: #c50000;
+    margin-top: 10px;
+    box-shadow: 0010pxrgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+
+  @media (max-width: 768px) {
+    .barberia-container {
+      padding: 10px;
+      margin-top: 20px;
+    }
+
+    .barberia-label{
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  
+    .header-barberia {
+      margin-top: 45px;
+      max-width: 100%;
+      width: 100%;
+      padding: 10px;
+      padding-top: 10px;
+      border-radius: 10px 10px 0 0; /* Bordes redondeados solo en la parte superior */
+    }
+  
+    .barberia-form {
+      max-width: 100%;
+      width: 100%;
+      padding: 10px;
+      border-radius: 0 0 10px 10px; /* Bordes redondeados solo en la parte inferior */
+    }
+  
+    .barberia-card-row {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .barberia-card {
+      width: 75%;
+      margin-bottom: 15px;
+    }
+  
+    .barberia-select {
+      width: 80%;
+      margin-left: 30px;
+    }
+  
+    .barberia-input-group {
+      width: 100%;
+    }
+  
+    .barberia-input {
+      width: 100%;
+    }
+  }
+  
+  
