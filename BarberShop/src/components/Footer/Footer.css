@@ -19,6 +19,7 @@
   }
 
   .Footer p {
-    margin: 0; /* Elimina el margen del párrafo para que se centre completamente */
+    margin: 0; /* Elimina el margen del párrafo */
+    font-size: 14px; /* Disminuye el tamaño de la fuente */
   }
 }

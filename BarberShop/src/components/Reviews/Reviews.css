@@ -1,6 +1,6 @@
+/* Estilos para el contenedor del carrusel */
 .custom-carousel {
   width: 100%; /* Ancho completo del contenedor */
-  /* margin: auto; */
   position: relative;
   overflow: hidden; /* Evita el scroll lateral */
 }
@@ -12,19 +12,17 @@
 .custom-card {
   background-color: #000; /* Fondo negro */
   color: #fff; /* Letras blancas */
-  border: none; /* Sin borde */
+  border: none;
   border-radius: 0; /* Sin radio en las esquinas */
-  padding: 20px 40px; /* Padding ajustado para reducir el ancho del texto */
-  box-shadow: none; /* Sin sombra */
+  padding: 20px 40px; /* Padding ajustado */
   width: 100%; /* Ancho completo */
-  box-sizing: border-box; /* Incluye el padding en el ancho */
-  margin: 0; /* Sin margen */
-  text-align: center; /* Centra el texto */
+  margin: 0;
+  text-align: center;
 }
 
 .custom-card .card-title {
-  font-size: 1.8rem; /* Tamaño de fuente más grande */
-  font-weight: bold; /* Texto en negrita */
+  font-size: 1.8rem; /* Tamaño de fuente grande */
+  font-weight: bold;
   margin-bottom: 10px;
   position: relative;
 }
@@ -41,14 +39,12 @@
 .custom-card .rating {
   display: flex;
   justify-content: center;
-  margin-top: 25px;
-  margin-bottom: 25px;
+  margin: 25px 0;
 }
 
 .star {
-  margin-top: 15px;
   font-size: 1.5rem;
-  color: #fff; /* Color blanco para las estrellas vacías */
+  color: #fff; /* Color blanco */
 }
 
 .star.filled {
@@ -57,8 +53,7 @@
 
 .custom-card .card-text {
   font-size: 1.2rem;
-  margin-bottom: 15px; /* Espacio debajo del texto */
-  text-align: center; /* Centra el texto */
+  margin-bottom: 15px;
 }
 
 .custom-card .card-footer {
@@ -69,23 +64,23 @@
   text-align: right;
 }
 
+/* Estilos para el formulario */
 .reviews-form-container {
-  padding: 20px; 
-  background-color: #000; /* Fondo negro para el formulario */
-  color: #fff; /* Texto blanco */
-  border-radius: 0px; /* Bordes redondeados */
-  margin-top: 10px; 
-  text-align: center; /* Centra el texto */
+  padding: 20px;
+  background-color: #000; /* Fondo negro */
+  color: #fff;
+  margin-top: 10px;
+  text-align: center;
 }
 
 .form-title {
-  font-size: 1.8rem; /* Tamaño de fuente grande para el título */
-  font-weight: bold; /* Texto en negrita */
-  margin-bottom: 10px; /* Espacio debajo del título */
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .custom-form .form-label {
-  color: #fff; /* Color blanco para las etiquetas del formulario */
+  color: #fff; /* Color blanco */
 }
 
 .custom-form .form-control {
@@ -96,15 +91,15 @@
 
 .custom-form .form-control,
 .custom-form .btn {
-  max-width: 500px; /* Ancho máximo para inputs y botón */
-  margin: 0 auto; /* Centrar en el eje principal */
-  display: block; /* Asegura que se comporten como bloques para centrado */
+  max-width: 500px;
+  margin: 0 auto;
+  display: block;
 }
 
 .custom-form .btn {
   background-color: #fff; /* Fondo blanco */
   color: #000; /* Texto negro */
-  border: none; /* Sin borde */
+  border: none;
 }
 
 .rating-input {
@@ -120,9 +115,21 @@
 }
 
 .rating-input .star-input.checked {
-  color: #fff; /* Color blanco para las estrellas seleccionadas */
+  color: #fff; /* Color blanco cuando están seleccionadas */
 }
 
-.button-send-form{
+.button-send-form {
   width: 150px;
+}
+
+.custom-card .card-text {
+  font-size: 1.2rem; /* Tamaño para pantallas grandes */
+  margin-bottom: 15px; /* Espacio debajo del texto */
+  text-align: center; /* Centra el texto */
+}
+
+@media (max-width: 768px) {
+  .custom-card .card-text {
+    font-size: 0.9rem; /* Tamaño reducido para pantallas móviles */
+  }
 }

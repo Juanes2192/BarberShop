@@ -9,29 +9,29 @@ export function Reviews() {
         {
             id: 1,
             name: "Juan Pérez",
-            text: "¡Excelente servicio y ambiente acogedor! El barbero fue muy atento y se aseguró de entender exactamente lo que quería antes de empezar. La atención al detalle fue increíble, y el resultado final fue un corte de pelo que superó mis expectativas. Sin duda volveré cada vez que necesite un corte de pelo. ¡Muy recomendable!",
+            text: "¡Excelente servicio y ambiente acogedor! El barbero fue muy atento y se aseguró de entender exactamente lo que quería antes de empezar. La atención al detalle fue increíble, y el resultado final fue un corte de pelo que superó mis expectativas. ¡Muy recomendable!",
             date: "2024-07-18",
-            rating: 1 // Rating de 1 estrella
+            rating: 1
         },
         {
             id: 2,
             name: "Sebastian Leiva",
-            text: "Es un buen sitios donde hacen el corte que les pides a la perfeccion, es una buena barberia",
+            text: "Es un buen sitio donde hacen el corte que les pides a la perfección, es una buena barbería.",
             date: "2024-11-10",
-            rating: 1 // Rating de 1 estrella
+            rating: 1
         },
         {
             id: 3,
             name: "Esteban Perdomo",
             text: "El corte es perfecto, pero la barba no tanto.",
             date: "2024-07-10",
-            rating: 1 // Rating de 1 estrella
+            rating: 1
         },
-        // Otros reviews...
+        // Agrega más reseñas si lo deseas...
     ];
+
     const [index, setIndex] = useState(0);
     const [rating, setRating] = useState(0);
-    const [inputvalue,setValue] = useState(reviews);
 
     const handleSelect = (selectedIndex, e) => {
         setIndex(selectedIndex);
@@ -42,9 +42,10 @@ export function Reviews() {
         onSwipedRight: () => setIndex((prevIndex) => (prevIndex - 1 + reviews.length) % reviews.length),
     });
 
-    const handleSubmit = () =>{   
+    const handleSubmit = (e) => {   
+        e.preventDefault();
         alert("Comentario enviado.");
-    }
+    };
 
     return (
         <div {...handlers} style={{ touchAction: 'pan-y' }} className="custom-carousel">
@@ -53,7 +54,7 @@ export function Reviews() {
                 onSelect={handleSelect}
                 indicators={false}
                 controls={false}
-                interval={10000} // Intervalo de 10 segundos
+                interval={10000}
                 fade
             >
                 {reviews.map((review) => (
@@ -62,7 +63,7 @@ export function Reviews() {
                             <Card.Body>
                                 <Card.Title>{review.name}</Card.Title>
                                 <div className="rating">
-                                    {[...Array(5)].map((star, i) => (
+                                    {[...Array(5)].map((_, i) => (
                                         <span
                                             key={i}
                                             className={`star ${i < review.rating ? "filled" : ""}`}
@@ -83,7 +84,7 @@ export function Reviews() {
                 <Form className="custom-form" onSubmit={handleSubmit}>
                     <Form.Group className="mb-3" controlId="formName">
                         <Form.Label>Nombre</Form.Label>
-                        <Form.Control type="text" placeholder="Nombre"  />
+                        <Form.Control type="text" placeholder="Nombre" />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formRating">
                         <Form.Label>Calificación</Form.Label>
@@ -108,4 +109,4 @@ export function Reviews() {
             </div>
         </div>
     );
-};
+}

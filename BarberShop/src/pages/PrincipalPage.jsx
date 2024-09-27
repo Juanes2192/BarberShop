@@ -70,8 +70,10 @@ export default function PrincipalPage() {
         <section id="/" className='seccion-inicio'>
           <div className="presentacion">
             <h1>¡MÁS QUE UN CORTE, UNA EXPERIENCIA!</h1>
-            <button id="boton-agenda">AGENDA TU CITA</button>
-            <button id="boton-productos">NUESTROS PRODUCTOS</button>
+            <div class="buttons-container">
+  <button class="cta-button" id="boton-agenda">AGENDA TU CITA</button>
+  <button class="cta-button" id="boton-productos">NUESTROS PRODUCTOS</button>
+</div>
           </div>
         </section>
         <section id="reseñas" className='secciones'>

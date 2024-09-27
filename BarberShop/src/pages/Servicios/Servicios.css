@@ -82,3 +82,32 @@
 .boton-servicio:hover {
   background-color: #444;
 }
+
+@media (max-width: 768px) {
+  .op-servicios {
+    grid-template-columns: 1fr; /* Ajusta a una columna en dispositivos móviles */
+    grid-template-rows: repeat(3, 1fr); /* Una fila para cada imagen */
+    height: auto; /* Deja que la altura se ajuste automáticamente */
+    margin-top: 100px; /* Agrega un margen superior de 250px */
+  }
+
+  .titulo-servicio {
+    top: 15%; /* Ajusta la posición vertical del título */
+    font-size: 1.5em; /* Reduce el tamaño de la fuente del título */
+  }
+
+  .resumen-servicio {
+    top: 35%; /* Ajusta la posición vertical del resumen */
+    font-size: 1em; /* Reduce el tamaño de la fuente del resumen */
+    margin-bottom: 20px;
+  }
+
+  .boton-servicio {
+    width: 70%;
+    margin: 0 auto;
+    top: 50%; /* Ajusta la posición vertical del botón */
+    font-size: 0.9em; /* Reduce el tamaño del texto del botón */
+    padding: 8px 16px; /* Ajusta el tamaño del botón */
+    margin-top: 60px;
+  }
+}
